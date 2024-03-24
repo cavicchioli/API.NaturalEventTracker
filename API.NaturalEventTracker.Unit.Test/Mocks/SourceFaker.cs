@@ -20,7 +20,7 @@ namespace API.NaturalEventTracker.Unit.Test.Mocks
         {
             return new Faker<Source>()
                 .RuleFor(s => s.Id, f => $"{f.Lorem.Word().ToUpper()}")
-                .RuleFor(s => s.Url, f => new Uri(f.Internet.Url()));
+                .RuleFor(s => s.Link, f => new Uri(f.Internet.Url()));
         }
 
         public async Task<IEnumerable<Source>> GetAllMock()

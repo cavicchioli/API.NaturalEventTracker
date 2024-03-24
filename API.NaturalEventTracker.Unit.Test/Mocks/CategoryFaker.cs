@@ -10,19 +10,17 @@ namespace API.NaturalEventTracker.Unit.Test.Mocks
     {
         private int numberOfCategories;
         private Faker<Category> categoryFaker;
-        private int categoryId;
 
         public CategoryFaker()
         {
             numberOfCategories = new Random().Next(1, 10);
             categoryFaker = GetFakerInstance();
-            categoryId = 1;
         }
 
         public Faker<Category> GetFakerInstance()
         {
             return new Faker<Category>()
-                .RuleFor(s => s.Id, f => categoryId++)
+                .RuleFor(s => s.Id, f => f.Lorem.Word())
                 .RuleFor(s => s.Title, f => f.Lorem.Word());
         }
 
