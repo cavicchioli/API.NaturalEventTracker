@@ -29,6 +29,7 @@ namespace API.NaturalEventTracker.Infra.Data.Repository
                 response.Content.ReadAsStringAsync().Result;
 
             var result = JsonConvert.DeserializeObject<CategoriesResponseMetadata>(content);
+
             return result.Categories.AsQueryable();
         }
     }
